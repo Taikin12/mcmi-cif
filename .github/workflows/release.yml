@@ -31,7 +31,7 @@ jobs:
       - name: Collect jar
         run: |
           mkdir -p dist
-          cp build/libs/mc-cif-viewer-*.jar dist/
+          cp build/libs/mcmi-cif-*.jar dist/
           rm -f dist/*-plain.jar
       - uses: softprops/action-gh-release@v2
         with:

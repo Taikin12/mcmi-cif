@@ -15,7 +15,7 @@ usage() {
   cat <<'USAGE'
 Usage: scripts/deploy-main.sh [--no-build] [--restart]
 
-Builds mc-cif-viewer and deploys it to the main server on 192.168.100.13.
+Builds mcmi-cif and deploys it to the main server on 192.168.100.13.
 By default the plugin is reloaded with PlugManX (no server restart).
 Use --restart when server.properties or the resource pack changed.
 The test server is the failover server and is not touched.
@@ -41,14 +41,14 @@ if [ "$BUILD" -eq 1 ]; then
     gradle:9.8.0-jdk25 ./gradlew shadowJar --console=plain
 fi
 
-jar="$(find build/libs -maxdepth 1 -name 'mc-cif-viewer-*.jar' ! -name '*-plain.jar' | sort | tail -1)"
+jar="$(find build/libs -maxdepth 1 -name 'mcmi-cif-*.jar' ! -name '*-plain.jar' | sort | tail -1)"
 if [ -z "$jar" ]; then
   echo "no shaded jar found; build first" >&2
   exit 1
 fi
 
 ssh "$HOST" "mkdir -p '$REMOTE_DIR/CifViewer/cif'"
-ssh "$HOST" "rm -f '$REMOTE_DIR'/mc-cif-viewer-*.jar '$REMOTE_DIR'/cif-viewer-*.jar"
+ssh "$HOST" "rm -f '$REMOTE_DIR'/mcmi-cif-*.jar '$REMOTE_DIR'/cif-viewer-*.jar"
 scp -q "$jar" "$HOST:$REMOTE_DIR/"
 scp -q samples/*.cif "$HOST:$REMOTE_DIR/CifViewer/cif/"
 ssh "$HOST" "chown -R 999:991 '$REMOTE_DIR/CifViewer' 2>/dev/null || true"

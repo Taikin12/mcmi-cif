@@ -40,7 +40,7 @@ public final class CodClient {
         URI uri = URI.create(baseUrl() + id + ".cif");
         HttpRequest request = HttpRequest.newBuilder(uri)
                 .timeout(Duration.ofSeconds(config.codTimeoutSeconds()))
-                .header("User-Agent", "mc-cif-viewer")
+                .header("User-Agent", "mcmi-cif")
                 .header("Accept", "chemical/x-cif,text/plain,*/*")
                 .GET()
                 .build();

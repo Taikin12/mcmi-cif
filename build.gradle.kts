@@ -17,7 +17,7 @@ repositories {
 }
 
 dependencies {
-    implementation("dev.taikin.miviewer:mc-mi-common:0.1.0-SNAPSHOT")
+    implementation("dev.taikin.miviewer:mcmi-common:0.1.0-SNAPSHOT")
     compileOnly("io.papermc.paper:paper-api:26.2.build.129-stable")
     testImplementation("io.papermc.paper:paper-api:26.2.build.129-stable")
     testImplementation("org.junit.jupiter:junit-jupiter:5.11.4")

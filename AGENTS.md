@@ -1,4 +1,4 @@
-# mc-cif-viewer agent notes
+# mcmi-cif agent notes
 
 ## Build and verification
 
@@ -6,8 +6,8 @@
 - Shared code lives in the `common/` submodule (included with `includeBuild("common")`,
   package `dev.taikin.miviewer.common`) and is shaded into this JAR.
 - Run `./gradlew test shadowJar` before a release or server deployment.
-- After updating the `common` submodule, build and test `../mc-mol-viewer` as well.
-- Build artifact: `build/libs/mc-cif-viewer-<version>.jar`.
+- After updating the `common` submodule, build and test `../mcmi-mol` as well.
+- Build artifact: `build/libs/mcmi-cif-<version>.jar`.
 - Generate the resource pack with `python3 resourcepack/build_pack.py`.
 
 ## Shared wands
@@ -42,7 +42,7 @@ See `../AGENTS.md` for the full workspace contract and common-first rules.
 
 - `resourcepack/build_pack.py` produces the CIF-only pack `build/cifviewer-resourcepack.zip`.
 - The server uses one shared pack for all viewers: `../scripts/deploy-resourcepack.sh`
-  builds `viewers.zip` in the parent workspace (CIF + mc-mol-viewer assets), copies it to
+  builds `viewers.zip` in the parent workspace (CIF + mcmi-mol assets), copies it to
   Dynmap, and updates `resource-pack` / `resource-pack-sha1` in `server.properties`.
 - It is served at `http://192.168.100.13:8123/viewers.zip`. Use `--restart` when the pack changes.
 - Never copy the CIF-only ZIP over the served pack; it removes the molecular assets.

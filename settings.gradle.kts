@@ -1,3 +1,3 @@
-rootProject.name = "mc-cif-viewer"
+rootProject.name = "mcmi-cif"
 
 includeBuild("common")

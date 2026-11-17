@@ -1,4 +1,4 @@
-# mc-cif-viewer
+# mcmi-cif
 
 Minecraft Paper 上で CIF 結晶構造を 3D 表示するプラグインです。  
 バニラクライアント + サーバー配布リソースパックで動作し、原子は `ItemDisplay`、結合線・単位胞はカスタムモデルで描画します。
@@ -43,7 +43,7 @@ Minecraft Paper 上で CIF 結晶構造を 3D 表示するプラグインです�
 生成物:
 
 ```text
-build/libs/mc-cif-viewer-<version>.jar
+build/libs/mcmi-cif-<version>.jar
 ```
 
 `-plain.jar` は shadow 前の JAR なので、サーバーには入れないでください。
@@ -67,7 +67,7 @@ resource-pack-sha1=<zip の SHA-1>
 require-resource-pack=false
 ```
 
-CIF と分子ビューア (`mc-mol-viewer`) は親ワークスペースの共有パックを使います。
+CIF と分子ビューア (`mcmi-mol`) は親ワークスペースの共有パックを使います。
 
 リソースパックが未適用の場合、球体・棒モデルは紙表示になります。
 
@@ -285,4 +285,4 @@ resourcepack/ リソースパック生成スクリプト
 
 ## Repository
 
-https://github.com/Taikin12/mc-cif-viewer
+https://github.com/Taikin12/mcmi-cif
